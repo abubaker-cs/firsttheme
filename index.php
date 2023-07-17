@@ -14,15 +14,14 @@
             Posted on <a href="<?php echo get_permalink() ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></a>
 
             By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php echo get_the_author(); ?> </a>
-        </a>
-
+            </a>
         </div>
 
         <!-- Display the post thumbnail AKA featured image -->
         <?php // the_post_thumbnail(); ?>
 
         <!-- Display excerpt of the post -->
-        <?php //the_excerpt(); ?>
+        <?php the_excerpt(); ?>
 
         <!-- End the while loop -->
     <?php endwhile;
