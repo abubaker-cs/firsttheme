@@ -9,13 +9,9 @@
             <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"> <?php the_title(); ?> </a>
         </h2>
 
-        <!-- Meta Data: get_the_date('l, F j, Y'); -->
+        <!-- Meta Data -->
         <div>
-            Posted on <a href="<?php echo get_permalink() ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></a>
-
-            By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php echo get_the_author(); ?> </a>
-        </a>
-
+            Posted on <a href="<?php get_permalink() ?>"><time><?php get_the_date( 'l F j, Y' ); ?></time></a>
         </div>
 
         <!-- Display the post thumbnail AKA featured image -->
