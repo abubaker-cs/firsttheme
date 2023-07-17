@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE <?php language_attributes(); ?>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Premium WordPress Theme</title>
+    
+    <!-- wp_head: Hook for injecting  functions and scripts -->
+    <?php wp_head(); ?>
+    
+
 </head>
 <body>
