@@ -23,6 +23,14 @@ function firstheme_readmore_link()
     
     /* translators: %s: Post Title */
     printf(
+
+        /* 
+            wp_kses: Filters text content and strips out disallowed HTML.
+
+            This function makes sure that only the allowed HTML element names, attribute names, 
+            attribute values, and HTML entities will occur in the given text string.
+        
+        */
         wp_kses(
             __( 'Read More <span class="u-screen-reader-text">About %s</span>', '_themename' ),
             [
@@ -33,6 +41,6 @@ function firstheme_readmore_link()
         ),
         get_the_title()
     );
-    
+
     echo '</a>';
 }
