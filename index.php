@@ -41,7 +41,7 @@
     <?php the_posts_pagination(); ?>
 
 
-<?php } else { ?>
+<?php } else { ?> 
 
     <p><?php _e('Sorry, no Posts To Display.'); ?></p>
 
