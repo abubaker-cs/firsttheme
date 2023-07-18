@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<!-- 
+<pre>
+< ? php var_dump($wp_query); ? >
+</pre>
+-->
+
+
 <!-- Check If posts exist, if yes then execute while loop -->
 
 <?php if (have_posts()) { ?>
@@ -15,24 +22,22 @@
 
         <!-- Meta Data: get_the_date('l, F j, Y'); -->
         <div>
-            Posted on <a href="<?php echo get_permalink() ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></a>
-
-            By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php echo get_the_author(); ?> </a>
-            </a>
+            <?php firsttheme_post_meta(); ?>
         </div>
 
         <!-- Display the post thumbnail AKA featured image -->
-        <?php // the_post_thumbnail();?>
+        <?php // the_post_thumbnail();
+        ?>
 
         <!-- Display excerpt of the post -->
         <?php the_excerpt(); ?>
 
         <!-- READMORE -->
-        <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"> Read More <span class="u-screen-reader-text">About <?php the_title(); ?></span> </a>
+        <?php firstheme_readmore_link(); ?>
 
         <!-- End the while loop -->
     <?php } ?>
-    
+
     <?php the_posts_pagination(); ?>
 
 
