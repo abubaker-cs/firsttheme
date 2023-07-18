@@ -43,7 +43,8 @@
 
 <?php } else { ?> 
 
-    <p><?php _e('Sorry, no Posts To Display.'); ?></p>
+    <!--  -->
+    <p><?php _e('Sorry, no posts match your criteria','firsttheme'); ?></p>
 
 <?php } ?>
 
