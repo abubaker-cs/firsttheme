@@ -41,10 +41,10 @@
     <?php the_posts_pagination(); ?>
 
 
-<?php } else { ?> 
+<?php } else { ?>
 
     <!--  -->
-    <p><?php _e('Sorry, no posts match your criteria','firsttheme'); ?></p>
+    <p><?php esc_html_e('Sorry, no posts match your criteria', 'firsttheme'); ?></p>
 
 <?php } ?>
 

@@ -1,26 +1,38 @@
 <?php
 
 function firsttheme_post_meta()
-{ ?>
+{
 
-    Posted on <a href="<?php echo esc_url(get_permalink()) ?>"><time datetime="<?php echo esc_attr(get_the_date('c')); ?>" itemprop="datePublished"><?php echo esc_html(get_the_date()); ?></time></a>
+    /* translators: %s: Post Date */
+    printf(
+        esc_html__('Posted on %s', '_themename'),
+        '<a href="' . esc_url(get_permalink()) . '"><time datetime="' . esc_attr(get_the_date('c')) . '">' .  esc_html(get_the_date()) . '</time></a>'
+    );
 
-    By <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))) ?>"><?php echo esc_html(get_the_author()); ?> </a>
-    </a>
-
-<?php
-
+    /* translators: %s: Post Author */
+    printf(
+        esc_html__(' By %s', '_themename'),
+        '<a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a>'
+    );
 }
 
 
 function firstheme_readmore_link()
-{ ?>
-
-    <a href="<?php echo esc_url(get_permalink()) ?>" title="<?php the_title_attribute(['echo' => false]); ?>"> Read More <span class="u-screen-reader-text">About <?php the_title(); ?></span> </a>
-
-
-<?php
-
+{
+    echo '<a class="c-post__readmore" href="' . esc_url(get_permalink()) . '" title="' . the_title_attribute(['echo' => false]) . '">';
+    
+    /* translators: %s: Post Title */
+    printf(
+        wp_kses(
+            __( 'Read More <span class="u-screen-reader-text">About %s</span>', '_themename' ),
+            [
+                'span' => [
+                    'class' => []
+                ]
+            ]
+        ),
+        get_the_title()
+    );
+    
+    echo '</a>';
 }
-
-?>
